@@ -1,0 +1,25 @@
+module ActionView
+  module TemplateHandlers
+    class EnhancedEruby < Erubis::FastEruby
+      include ::Erubis::PercentLineEnhancer
+      include ::Erubis::DeleteIndentEnhancer
+      include ::Erubis::ErboutEnhancer
+    end
+    
+    class Erubis < TemplateHandler
+      include Compilable  
+        
+      def self.install!
+         ActionView::Template.register_default_template_handler :erb, self          
+      end
+        
+      def compile(template)  
+        options = {}      
+        EnhancedEruby.new(template.source, options).src
+      end
+
+    end
+  end
+end
+
+ActionView::TemplateHandlers::Erubis.install!
