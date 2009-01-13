@@ -15,4 +15,5 @@ rescue LoadError
                  Add "config.gem 'erubis', :version => 2.6.2" to config/environment.rb]
 end  
 
+require 'output_buffer_enhancer'
 require 'action_view/template_handlers/erubis'
