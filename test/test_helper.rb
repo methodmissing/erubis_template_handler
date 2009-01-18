@@ -12,8 +12,8 @@ module ActionView
             dependencies!
             routing!
             logger!
-            view_paths!
-            controller!
+            dependencies!
+            view_and_helper_paths!
           end
           
           private
@@ -33,13 +33,16 @@ module ActionView
             def logger!
               ::ActionController::Base.logger = Logger.new( STDOUT )
             end
-            
-            def view_paths!
-              ::ActionController::Base.view_paths = relative( 'views' )
+      
+            def dependencies!
+              %w(helpers controllers).each do |dir|
+                ::ActiveSupport::Dependencies.load_paths << relative( dir )
+              end 
             end
             
-            def controller!
-              require relative( 'controllers', 'products_controller' )
+            def view_and_helper_paths!
+              ::ActionController::Base.helpers_dir = relative( 'helpers' )
+              ::ActionController::Base.view_paths = relative( 'views' )
             end
       
             def relative( *path )

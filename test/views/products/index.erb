@@ -1,1 +1,3 @@
-<%= render :partial => 'product', :collection => @products %>
+<% with_pagination do %>
+  <%= render :partial => 'product', :collection => @products %>
+<% end %>

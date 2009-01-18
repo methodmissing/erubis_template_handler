@@ -5,7 +5,7 @@ class ErubisHandlerTest < ActionController::TestCase
   def setup
     @request = ActionController::TestRequest.new
     @response = ActionController::TestResponse.new
-    @controller = ::ProductsController.new 
+    @controller = ProductsController.new 
   end
   
   test "should be able to render with success" do
