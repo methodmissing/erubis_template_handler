@@ -17,3 +17,4 @@ end
 
 require 'output_buffer_enhancer'
 require 'action_view/template_handlers/erubis'
+require 'action_view/helpers/erubis_helper'

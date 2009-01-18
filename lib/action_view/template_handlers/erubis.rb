@@ -17,7 +17,7 @@ module ActionView
         
       def compile(template)  
         options = {}    
-        EnhancedEruby.new("<% __in_erb_template=true %>#{template.source}", options).src
+        EnhancedEruby.new(template.source, options).src
       end
 
     end
