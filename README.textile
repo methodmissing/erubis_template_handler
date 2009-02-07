@@ -1,3 +1,8 @@
-<h1>Erubis Template Handler</h1>
+h1. Erubis Template Handler
 
-<h2>!! Work in progress, Edge || 2.3.x only !!</h2>
+h2. Usage
+
+A drop in replacement for the ERB template handler.
+
+  sudo gem install erubis
+  sudo gem install methodmissing-erubis_template_handler -s http://gems.github.com
