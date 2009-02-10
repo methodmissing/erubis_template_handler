@@ -20,6 +20,7 @@ begin
     s.homepage = "http://github.com/methodmissing/erubis_template_handler"
     s.description = "Rails 2.3 / Edge template handler for erubis ( http://www.kuwata-lab.com/erubis/ )"
     s.authors = ["Lourens Naudé"]
+    s.files =  FileList["[A-Z]*", "{lib,test,rails}/**/*"]
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
